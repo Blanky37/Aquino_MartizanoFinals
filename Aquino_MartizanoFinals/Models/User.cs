@@ -19,7 +19,8 @@ namespace Aquino_MartizanoFinals.Models
     {
         Present,
         Excused,
-        Absent
+        Absent,
+        None
     }
 
 }

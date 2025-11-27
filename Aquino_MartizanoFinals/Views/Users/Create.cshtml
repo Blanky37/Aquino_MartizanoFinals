@@ -23,20 +23,30 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Week1" class="control-label"></label>
-                <select asp-for="Week1" class="form-control"></select>
-                <span asp-validation-for="Week1" class="text-danger"></span>
+                <label>Week 1</label>
+                @Html.DropDownListFor(model => model.Week1,
+                         (SelectList)ViewBag.AttendanceList,
+                         "Select Status",
+                         new { @class = "form-control" })
             </div>
+
             <div class="form-group">
-                <label asp-for="Week2" class="control-label"></label>
-                <select asp-for="Week2" class="form-control"></select>
-                <span asp-validation-for="Week2" class="text-danger"></span>
+                <label>Week 2</label>
+                @Html.DropDownListFor(model => model.Week2,
+                         (SelectList)ViewBag.AttendanceList,
+                         "Select Status",
+                         new { @class = "form-control" })
             </div>
+
             <div class="form-group">
-                <label asp-for="Week3" class="control-label"></label>
-                <select asp-for="Week3" class="form-control"></select>
-                <span asp-validation-for="Week3" class="text-danger"></span>
+                <label>Week 3</label>
+                @Html.DropDownListFor(model => model.Week3,
+                         (SelectList)ViewBag.AttendanceList,
+                         "Select Status",
+                         new { @class = "form-control" })
             </div>
+       
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

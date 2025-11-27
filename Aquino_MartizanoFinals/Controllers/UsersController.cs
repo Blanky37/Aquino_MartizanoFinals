@@ -46,7 +46,16 @@ namespace Aquino_MartizanoFinals.Controllers
         // GET: Users/Create
         public IActionResult Create()
         {
-            ViewBag.AttendanceList = new SelectList(Enum.GetValues(typeof(AttendanceStatus)));
+            ViewBag.AttendanceList = new SelectList(
+                new[] {
+                    new { Value = AttendanceStatus.None, Text = "---" },
+                    new { Value = AttendanceStatus.Present, Text = "Present" },
+                    new { Value = AttendanceStatus.Excused, Text = "Excused" },
+                    new { Value = AttendanceStatus.Absent, Text = "Absent" }
+                },
+                "Value",
+                "Text"
+           );
             return View();
         }
 
@@ -80,9 +89,21 @@ namespace Aquino_MartizanoFinals.Controllers
                 return NotFound();
             }
 
-            ViewBag.AttendanceList = new SelectList(Enum.GetValues(typeof(AttendanceStatus)));
+            ViewBag.AttendanceList = new SelectList(
+                new[]
+                {
+            new { Value = AttendanceStatus.None, Text = "---" },
+            new { Value = AttendanceStatus.Present, Text = "Present" },
+            new { Value = AttendanceStatus.Excused, Text = "Excused" },
+            new { Value = AttendanceStatus.Absent, Text = "Absent" }
+                },
+                "Value",
+                "Text"
+            );
+
             return View(user);
         }
+
 
 
         // POST: Users/Edit/5
