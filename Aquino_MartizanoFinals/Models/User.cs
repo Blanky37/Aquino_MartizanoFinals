@@ -1,7 +1,10 @@
-﻿namespace Aquino_MartizanoFinals.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Aquino_MartizanoFinals.Models
 {
     public class User
     {
+        [Key]
         public int StudentId { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }

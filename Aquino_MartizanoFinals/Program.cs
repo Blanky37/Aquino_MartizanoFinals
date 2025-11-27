@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Aquino_MartizanoFinals.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<Aquino_MartizanoFinalsContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Aquino_MartizanoFinalsContext") ?? throw new InvalidOperationException("Connection string 'Aquino_MartizanoFinalsContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
